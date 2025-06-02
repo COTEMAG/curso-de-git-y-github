@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Curso Básico de Git y GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .example {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        .result {
+            background: #e8f4f8;
+            padding: 10px;
+            border: 1px dashed #3498db;
+            margin: 10px 0;
+        }
+        .command {
+            background: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Curso Básico de Git y GitHub</h1>
+
+<!-- ========== SECCIÓN 1: INTRODUCCIÓN ========== -->
+<h2>1. ¿Qué es Git y GitHub?</h2>
+
+<h3>Git</h3>
+<p>Git es un <strong>sistema de control de versiones distribuido</strong> que permite:</p>
+<ul>
+    <li>Registrar cambios en archivos</li>
+    <li>Trabajar en equipo de forma coordinada</li>
+    <li>Revertir cambios cuando sea necesario</li>
+    <li>Crear ramas para desarrollar características independientes</li>
+</ul>
+
+<h3>GitHub</h3>
+<p>GitHub es una plataforma de alojamiento para proyectos que usan Git. Ofrece:</p>
+<ul>
+    <li>Almacenamiento en la nube de repositorios</li>
+    <li>Herramientas para colaboración</li>
+    <li>Funcionalidades sociales (seguir proyectos, dar estrellas)</li>
+    <li>GitHub Pages para alojar sitios web</li>
+</ul>
+
+<!-- ========== SECCIÓN 2: CONFIGURACIÓN INICIAL ========== -->
+<h2>2. Configuración inicial</h2>
+
+<h3>Instalación</h3>
+<p>Descarga Git desde <a href="https://git-scm.com/" target="_blank">git-scm.com</a> e instálalo en tu sistema.</p>
+
+<h3>Configuración básica</h3>
+<div class="example">
+    <h3>Comandos básicos de configuración:</h3>
+    <div class="command">git config --global user.name "Tu Nombre"</div>
+    <div class="command">git config --global user.email "tu@email.com"</div>
+    <div class="command">git config --global core.editor "code --wait"</div>
+</div>
+
+<!-- ========== SECCIÓN 3: CONCEPTOS BÁSICOS ========== -->
+<h2>3. Conceptos básicos</h2>
+
+<h3>Repositorio</h3>
+<p>Directorio donde Git realiza el seguimiento de los cambios en los archivos.</p>
+
+<h3>Commit</h3>
+<p>Un "snapshot" o instantánea de los cambios en un momento determinado.</p>
+
+<h3>Rama (Branch)</h3>
+<p>Línea de desarrollo independiente que permite trabajar en características sin afectar la versión principal.</p>
+
+<h3>Clonar (Clone)</h3>
+<p>Copiar un repositorio remoto a tu máquina local.</p>
+
+<!-- ========== SECCIÓN 4: COMANDOS BÁSICOS ========== -->
+<h2>4. Comandos básicos de Git</h2>
+
+<h3>Iniciar un repositorio</h3>
+<div class="command">git init</div>
+<p>Crea un nuevo repositorio Git en el directorio actual.</p>
+
+<h3>Ver el estado</h3>
+<div class="command">git status</div>
+<p>Muestra el estado del directorio de trabajo y del área de preparación.</p>
+
+<h3>Añadir cambios</h3>
+<div class="command">git add nombre_archivo</div>
+<div class="command">git add .</div>
+<p>Añade archivos al área de preparación (staging area).</p>
+
+<h3>Confirmar cambios</h3>
+<div class="command">git commit -m "Mensaje descriptivo"</div>
+<p>Crea un commit con los cambios preparados.</p>
+
+<h3>Ver historial</h3>
+<div class="command">git log</div>
+<div class="command">git log --oneline</div>
+<p>Muestra el historial de commits.</p>
+
+<!-- ========== SECCIÓN 5: TRABAJANDO CON RAMAS ========== -->
+<h2>5. Trabajando con ramas</h2>
+
+<h3>Crear una rama</h3>
+<div class="command">git branch nombre_rama</div>
+
+<h3>Cambiar de rama</h3>
+<div class="command">git checkout nombre_rama</div>
+<div class="command">git switch nombre_rama</div>
+
+<h3>Crear y cambiar a nueva rama</h3>
+<div class="command">git checkout -b nombre_rama</div>
+
+<h3>Fusionar ramas</h3>
+<div class="command">git merge nombre_rama</div>
+<p>Fusiona los cambios de la rama especificada con la rama actual.</p>
+
+<h3>Eliminar rama</h3>
+<div class="command">git branch -d nombre_rama</div>
+
+<!-- ========== SECCIÓN 6: TRABAJANDO CON GITHUB ========== -->
+<h2>6. Trabajando con GitHub</h2>
+
+<h3>Clonar un repositorio</h3>
+<div class="command">git clone https://github.com/usuario/repositorio.git</div>
+
+<h3>Conectar repositorio local a remoto</h3>
+<div class="command">git remote add origin https://github.com/usuario/repositorio.git</div>
+
+<h3>Subir cambios (push)</h3>
+<div class="command">git push -u origin main</div>
+<p>Sube los commits locales al repositorio remoto.</p>
+
+<h3>Actualizar repositorio local (pull)</h3>
+<div class="command">git pull origin main</div>
+<p>Descarga los cambios del repositorio remoto y los fusiona con tu versión local.</p>
+
+<h3>Fork y Pull Request</h3>
+<p>Para contribuir a proyectos ajenos:</p>
+<ol>
+    <li>Haz un fork del proyecto en GitHub</li>
+    <li>Clona tu fork localmente</li>
+    <li>Crea una rama para tus cambios</li>
+    <li>Haz commits y push a tu fork</li>
+    <li>Crea un Pull Request desde tu fork al repositorio original</li>
+</ol>
+
+<!-- ========== SECCIÓN 7: FLUJO DE TRABAJO BÁSICO ========== -->
+<h2>7. Flujo de trabajo básico</h2>
+
+<div class="example">
+    <h3>Ejemplo de flujo diario:</h3>
+    <div class="command">git pull origin main</div>
+    <div class="command">git checkout -b nueva-funcionalidad</div>
+    <p># Realiza cambios en los archivos...</p>
+    <div class="command">git add .</div>
+    <div class="command">git commit -m "Agrega nueva funcionalidad"</div>
+    <div class="command">git push origin nueva-funcionalidad</div>
+    <p># Luego en GitHub: crear Pull Request y esperar revisión</p>
+</div>
+
+<!-- ========== SECCIÓN 8: RESOLVIENDO CONFLICTOS ========== -->
+<h2>8. Resolviendo conflictos</h2>
+
+<p>Cuando Git no puede fusionar cambios automáticamente:</p>
+<ol>
+    <li>Abre los archivos con conflictos (marcados con <code>&lt;&lt;&lt;&lt;</code> y <code>&gt;&gt;&gt;&gt;</code>)</li>
+    <li>Edita para resolver las diferencias</li>
+    <li>Marca como resuelto:</li>
+    <div class="command">git add archivo_con_conflicto</div>
+    <li>Completa la fusión:</li>
+    <div class="command">git commit</div>
+</ol>
+
+<!-- ========== SECCIÓN 9: BUENAS PRÁCTICAS ========== -->
+<h2>9. Buenas prácticas</h2>
+
+<ul>
+    <li>Haz commits atómicos (un cambio por commit)</li>
+    <li>Escribe mensajes de commit claros y descriptivos</li>
+    <li>Haz pull frecuentemente para mantenerte actualizado</li>
+    <li>Usa ramas para cada nueva característica o corrección</li>
+    <li>Ignora archivos innecesarios con <code>.gitignore</code></li>
+</ul>
+
+<h3>Archivo .gitignore</h3>
+<p>Especifica archivos que Git debe ignorar:</p>
+<pre><code># Ejemplo de .gitignore
+node_modules/
+*.log
+.DS_Store
+.env</code></pre>
+
+<!-- ========== SECCIÓN 10: RECURSOS ADICIONALES ========== -->
+<h2>10. Recursos adicionales</h2>
+
+<ul>
+    <li><a href="https://git-scm.com/doc" target="_blank">Documentación oficial de Git</a></li>
+    <li><a href="https://docs.github.com/es" target="_blank">Documentación de GitHub</a></li>
+    <li><a href="https://learngitbranching.js.org/" target="_blank">Learn Git Branching (tutorial interactivo)</a></li>
+    <li><a href="https://github.com/git-guides" target="_blank">GitHub Guides</a></li>
+</ul>
+
+</body>
+</html>
